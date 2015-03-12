@@ -6,7 +6,8 @@
 		},
 
 		attachLoader : function(key, fn, loaderHandle){
-			if(loaderHandle){
+			var hasLoaderHandle = (typeof loaderHandle === "function");
+			if(hasLoaderHandle){
                 loaderHandle(key, fn);
 			} else {
                 window[key] = handle;
